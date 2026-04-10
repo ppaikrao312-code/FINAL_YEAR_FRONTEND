@@ -15,7 +15,7 @@ let barChart = null;
 
 // ================= LOAD FIRs =================
 function loadAllFirs() {
-  fetch("http://localhost:8080/api/fir/all", {
+  fetch("https://finalyearbackend-production-09c1.up.railway.app/api/fir/all", {
     headers: { Authorization: "Bearer " + token }
   })
     .then(res => res.json())
@@ -125,7 +125,7 @@ function renderCharts(approved, rejected, pending) {
 
 // ================= UPDATE STATUS =================
 function updateStatus(id, status) {
-  fetch(`http://localhost:8080/api/fir/update-status/${id}?status=${status}`, {
+  fetch(`https://finalyearbackend-production-09c1.up.railway.app/api/fir/update-status/${id}?status=${status}`, {
     method: "PUT",
     headers: { Authorization: "Bearer " + token }
   })
@@ -156,7 +156,7 @@ function closeModal() {
 
 // ================= LOAD EVIDENCE =================
 function loadEvidence(firId) {
-  fetch(`http://localhost:8080/api/evidence/fir/${firId}`, {
+  fetch(`https://finalyearbackend-production-09c1.up.railway.app/api/evidence/fir/${firId}`, {
     headers: { Authorization: "Bearer " + token }
   })
     .then(res => res.json())
@@ -178,7 +178,7 @@ function loadEvidence(firId) {
 
             <a class="btn-primary"
                target="_blank"
-               href="http://localhost:8080/api/evidence/view/${ev.id}">
+               href="https://finalyearbackend-production-09c1.up.railway.app/api/evidence/view/${ev.id}">
                View File
             </a>
           </div>
@@ -230,7 +230,7 @@ function toggleNotifications() {
 }
 
 function loadNotifications(markRead = false) {
-  fetch("http://localhost:8080/notifications", {
+  fetch("https://finalyearbackend-production-09c1.up.railway.app/notifications", {
     headers: {
       Authorization: "Bearer " + token
     }
@@ -259,7 +259,7 @@ function loadNotifications(markRead = false) {
         div.style.fontWeight = "bold";
 
         if (markRead) {
-          fetch(`http://localhost:8080/notifications/${n.id}/read`, {
+          fetch(`https://finalyearbackend-production-09c1.up.railway.app/notifications/${n.id}/read`, {
             method: "PUT",
             headers: { Authorization: "Bearer " + token }
           });
