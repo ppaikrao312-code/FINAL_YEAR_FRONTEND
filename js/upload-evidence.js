@@ -18,7 +18,7 @@ function uploadEvidence() {
     const formData = new FormData();
     formData.append("file", fileInput.files[0]);
 
-    fetch(`http://localhost:8080/api/evidence/upload/${firId}`, {
+    fetch(`https://finalyearbackend-production-09c1.up.railway.app/api/evidence/upload/${firId}`, {
         method: "POST",
         headers: {
             "Authorization": "Bearer " + token
