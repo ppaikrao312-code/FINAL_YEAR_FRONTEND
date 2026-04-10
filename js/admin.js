@@ -26,7 +26,7 @@ function toggleNotifications() {
 }
 
 function loadNotifications(markRead = false) {
-  fetch("http://localhost:8080/notifications", {
+  fetch("https://finalyearbackend-production-09c1.up.railway.app/notifications", {
     headers: {
       Authorization: "Bearer " + token
     }
@@ -55,7 +55,7 @@ function loadNotifications(markRead = false) {
         div.style.fontWeight = "bold";
 
         if (markRead) {
-          fetch(`http://localhost:8080/notifications/${n.id}/read`, {
+          fetch(`https://finalyearbackend-production-09c1.up.railway.app/notifications/${n.id}/read`, {
             method: "PUT",
             headers: { Authorization: "Bearer " + token }
           });
@@ -117,7 +117,7 @@ function loadDashboard() {
 let userChart;
 
 function loadUsers() {
-  fetch("http://localhost:8080/api/admin/users", {
+  fetch("https://finalyearbackend-production-09c1.up.railway.app/api/admin/users", {
     headers: { Authorization: "Bearer " + token }
   })
   .then(res => res.json())
@@ -166,7 +166,7 @@ function loadUsers() {
 let firChart;
 
 function loadFirs() {
-  fetch("http://localhost:8080/api/fir/all", {
+  fetch("https://finalyearbackend-production-09c1.up.railway.app/api/fir/all", {
     headers: { Authorization: "Bearer " + token }
   })
   .then(res => res.json())
@@ -211,7 +211,7 @@ function loadFirs() {
 
 // ================= POLICE PROFILES =================
 function loadPoliceProfiles() {
-  fetch("http://localhost:8080/api/admin/police-profiles", {
+  fetch("https://finalyearbackend-production-09c1.up.railway.app/api/admin/police-profiles", {
     headers: { Authorization: "Bearer " + token }
   })
   .then(res => res.json())
@@ -221,7 +221,7 @@ function loadPoliceProfiles() {
 
     data.forEach(p => {
       const imgUrl = p.profilePhoto
-        ? `http://localhost:8080/uploads/profile/${p.profilePhoto}`
+        ? `https://finalyearbackend-production-09c1.up.railway.app/uploads/profile/${p.profilePhoto}`
         : "img/default.png";
         const statusText = p.enabled ? "ACTIVE" : "DISABLED";
         const btnText = p.enabled ? "Disable" : "Enable";
@@ -264,7 +264,7 @@ function openPhoto(src) {
 function togglePolice(userId) {
   if (!confirm("Change police status?")) return;
 
-  fetch(`http://localhost:8080/api/admin/toggle-user/${userId}`, {
+  fetch(`https://finalyearbackend-production-09c1.up.railway.app/api/admin/toggle-user/${userId}`, {
     method: "PUT",
     headers: {
       Authorization: "Bearer " + token
