@@ -1,3 +1,3 @@
 const CONFIG = {
-    API_URL: "http://localhost:8080"
+    API_URL: "https://finalyearbackend-production-09c1.up.railway.app"
 };
