@@ -13,7 +13,7 @@ document.getElementById("firForm").addEventListener("submit", function (e) {
     const name = document.getElementById("name").value;
     const details = document.getElementById("details").value;
 
-    fetch("http://localhost:8080/api/fir/create", {
+    fetch("https://finalyearbackend-production-09c1.up.railway.app/api/fir/create", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
