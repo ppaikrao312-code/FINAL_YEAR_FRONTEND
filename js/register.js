@@ -88,7 +88,7 @@ async function register() {
 
     try {
 
-        const response = await fetch("http://localhost:8080/api/auth/register", {
+        const response = await fetch("https://finalyearbackend-production-09c1.up.railway.app/api/auth/register", {
 
             method: "POST",
 
