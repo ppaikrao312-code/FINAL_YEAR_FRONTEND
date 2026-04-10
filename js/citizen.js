@@ -35,7 +35,7 @@ function loadMyFirs() {
 
     const token = localStorage.getItem("token");
 
-    fetch("http://localhost:8080/api/fir/my", {
+    fetch("https://finalyearbackend-production-09c1.up.railway.app/api/fir/my", {
         headers: {
             Authorization: "Bearer " + token
         }
@@ -105,7 +105,7 @@ function loadNotifications(markRead = false) {
 
     const token = localStorage.getItem("token");
 
-    fetch("http://localhost:8080/notifications", {
+    fetch("https://finalyearbackend-production-09c1.up.railway.app/notifications", {
         headers: {
             Authorization: "Bearer " + token
         }
@@ -136,7 +136,7 @@ function loadNotifications(markRead = false) {
                 div.style.fontWeight = "bold";
 
                 if (markRead) {
-                    fetch(`http://localhost:8080/notifications/${n.id}/read`, {
+                    fetch(`https://finalyearbackend-production-09c1.up.railway.app/notifications/${n.id}/read`, {
                         method: "PUT",
                         headers: {
                             Authorization: "Bearer " + token
