@@ -1,6 +1,6 @@
 const token = localStorage.getItem("token");
 
-fetch("/api/admin/users", {
+fetch("https://finalyearbackend-production-09c1.up.railway.app/api/admin/users", {
     headers: { "Authorization": "Bearer " + token }
 })
 .then(res => res.json())
@@ -29,14 +29,14 @@ fetch("/api/admin/users", {
 });
 
 function toggle(id) {
-    fetch(`/api/admin/toggle-user/${id}`, {
+    fetch(`https://finalyearbackend-production-09c1.up.railway.app/api/admin/toggle-user/${id}`, {
         method: "PUT",
         headers: { "Authorization": "Bearer " + token }
     }).then(() => location.reload());
 }
 
 function addPolice() {
-    fetch("/api/admin/add-police", {
+    fetch("https://finalyearbackend-production-09c1.up.railway.app/api/admin/add-police", {
         method: "POST",
         headers: {
             "Authorization": "Bearer " + token,
