@@ -12,7 +12,7 @@ if (!evidenceId) {
     alert("Evidence ID missing");
 }
 
-fetch(`http://localhost:8080/api/evidence/view/${evidenceId}`, {
+fetch(`https://finalyearbackend-production-09c1.up.railway.app/api/evidence/view/${evidenceId}`, {
     headers: {
         "Authorization": "Bearer " + token
     }
