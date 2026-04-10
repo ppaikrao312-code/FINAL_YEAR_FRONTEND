@@ -82,7 +82,7 @@ generateCaptcha();
 return;
 }
 
-fetch("http://localhost:8080/api/auth/login",{
+fetch("https://finalyearbackend-production-09c1.up.railway.app/api/auth/login",{
 
 method:"POST",
 
