@@ -12,7 +12,7 @@
     
 const token = localStorage.getItem("token");
 
-fetch("http://localhost:8080/notifications", {
+fetch("https://finalyearbackend-production-09c1.up.railway.app/notifications", {
     headers: {
         "Authorization": "Bearer " + token
     }
@@ -33,7 +33,7 @@ fetch("http://localhost:8080/notifications", {
         li.addEventListener("click", () => {
             if (n.read) return;
 
-            fetch(`http://localhost:8080/notifications/${n.id}/read`, {
+            fetch(`https://finalyearbackend-production-09c1.up.railway.app/notifications/${n.id}/read`, {
                 method: "PUT",
                 headers: {
                     "Authorization": "Bearer " + token
