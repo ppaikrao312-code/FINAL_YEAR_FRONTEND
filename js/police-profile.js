@@ -27,7 +27,7 @@ const BASE_URL = "http://127.0.0.1:8080";
 document.addEventListener("DOMContentLoaded", loadProfile);
 
 function loadProfile() {
-  fetch(`${BASE_URL}/api/police/profile/me`, {
+  fetch(`https://finalyearbackend-production-09c1.up.railway.app/api/police/profile/me`, {
     headers: {
       "Authorization": "Bearer " + token
     }
@@ -57,7 +57,7 @@ function loadProfile() {
 
     // Show profile photo (preview + saved)
   if (data.profilePhoto) {
-  const imgUrl = `${BASE_URL}/uploads/profile/${data.profilePhoto}`;
+  const imgUrl = `https://finalyearbackend-production-09c1.up.railway.app/uploads/profile/${data.profilePhoto}`;
 
   savedPhoto.src = imgUrl;
   savedPhoto.style.display = "block";
@@ -73,7 +73,7 @@ function loadProfile() {
 profileForm.addEventListener("submit", function (e) {
   e.preventDefault();
 
-  fetch(`${BASE_URL}/api/police/profile`, {
+  fetch(`https://finalyearbackend-production-09c1.up.railway.app/api/police/profile`, {
     method: "POST",
     headers: {
       "Authorization": "Bearer " + token,
@@ -126,7 +126,7 @@ reader.onload = () => {
 reader.readAsDataURL(file);
 
 
-  fetch(`${BASE_URL}/api/police/profile/upload-photo`, {
+  fetch(`https://finalyearbackend-production-09c1.up.railway.app/api/police/profile/upload-photo`, {
     method: "POST",
     headers: {
       "Authorization": "Bearer " + token
